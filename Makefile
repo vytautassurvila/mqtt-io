@@ -27,3 +27,10 @@ publish: build
 
 docs:
 	poetry run python docs_src/generate_docs.py
+
+dev-install-requirements:
+	# should remove all hashes from requirements.txt
+	poetry export -o ./requirements.txt && pip3 install -r requirements.txt
+
+dev-run:
+	python -m mqtt_io ./config.yml
